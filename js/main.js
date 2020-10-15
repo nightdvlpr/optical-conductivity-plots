@@ -3,8 +3,8 @@ window.onload = () => {
   console.log('________________________ Mathematical Simulation ________________________');
 
   // data members
-  const lambda = 0.2; //λ
-  const theta = 2 * Math.PI; //θ
+  const lambda = 0.2; // λ
+  const theta = 2 * 180; // θ => Random between 0-360
   const vf = 2.55;
   const alpha = 14.82;
   const k = 10;// Math.pow(10, 10);
@@ -12,7 +12,7 @@ window.onload = () => {
   const m = 35.21;
   let v;
 
-  v = vf * (1 + Math.pow(alpha * k, 2));
+  v = vf * (1 + alpha * Math.pow(k, 2));
   // formula
   // let H = (Math.pow(lambda, 2) * Math.pow(v, 2) * Math.pow(k, 2));
 
