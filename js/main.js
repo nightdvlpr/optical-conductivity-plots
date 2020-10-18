@@ -1,8 +1,6 @@
 window.onload = () => {
   let plotObj = new Plot();
-  prt("E0 => " + plotObj.e_zero);
-  prt("E- => " + plotObj.e_minus);
-  prt("E+ => " + plotObj.e_plus);
+  plotObj.calculate();
 }
 
 class Plot {
@@ -22,35 +20,24 @@ class Plot {
     this.h = 1;
     this.m = 35.21;
     this.v = this.vf * (1 + this.alpha * Math.pow(this.k, 2));
+    this.mu = 0.25; // μ
+    this.t = Math.pow(10, -30);
   }
 
   calculate() {
     // formula
     // let H = (Math.pow(lambda, 2) * Math.pow(v, 2) * Math.pow(k, 2));
-  }
-
-  get e_zero() {
-    return this.calc_E_zero();
-  }
-
-  get e_plus() {
-    return this.calc_E_plus();
-  }
-
-  get e_minus() {
-    return this.calc_E_minus();
-  }
-
-  calc_E_zero() {
-    return (Math.pow(this.h, 2) * Math.pow(this.k, 2)) / (2 * this.m);
-  }
-
-  calc_E_plus() {
-    return (this.e_zero + Math.sqrt((Math.pow(this.v, 2) * Math.pow(this.k, 2) + Math.pow(this.lambda, 2) * Math.pow(this.k, 6) * Math.pow(Math.cos(angleToRadian(3 * this.theta)), 2))));
-  }
-
-  calc_E_minus() {
-    return (this.e_zero - (Math.sqrt((Math.pow(this.v, 2) * Math.pow(this.k, 2) + Math.pow(this.lambda, 2) * Math.pow(this.k, 6) * Math.pow(Math.cos(angleToRadian(3 * this.theta)), 2)))));
+    let E0 = (Math.pow(this.h, 2) * Math.pow(this.k, 2)) / (2 * this.m);
+    let E_plus = E0 + Math.sqrt((Math.pow(this.v, 2) * Math.pow(this.k, 2) + Math.pow(this.lambda, 2) * Math.pow(this.k, 6) * Math.pow(Math.cos(angleToRadian(3 * this.theta)), 2)));
+    let E_minus = E0 - (Math.sqrt((Math.pow(this.v, 2) * Math.pow(this.k, 2) + Math.pow(this.lambda, 2) * Math.pow(this.k, 6) * Math.pow(Math.cos(angleToRadian(3 * this.theta)), 2))));
+    let F_E_plus = (1 / (Math.exp((E_minus / this.t) - (this.mu / this.t)) + 1));
+    let F_E_minus = (1 / (Math.exp((E_plus / this.t) - (this.mu / this.t)) + 1));
+    
+    prt("E0 => " + E0);
+    prt("E- => " + E_minus);
+    prt("E+ => " + E_plus);
+    prt("f(E-) => " + F_E_plus);
+    prt("f(E+) => " + F_E_minus);
   }
 }
 
