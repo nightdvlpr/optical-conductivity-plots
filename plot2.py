@@ -1,5 +1,7 @@
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+matplotlib.rcParams['text.usetex'] = True
+import matplotlib.pyplot as plt
 
 # title
 plt.title('FIG. 3.')
@@ -9,8 +11,10 @@ plt.xlabel('W(eV)')
 plt.xticks([0.35, .40, .45, .50, .60, .65, .70])
 
 # Y
-plt.ylabel('W(in unit of (2PIe^2/h))')
+plt.ylabel('ddd', fontsize=16)
 plt.yticks([ 0, .1, .2, .3, .4])
+
+
 
 #axis
 plt.axis([0.35, .70, 0, .4])
