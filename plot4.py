@@ -1,40 +1,37 @@
 import numpy as np
 import matplotlib
+from matplotlib.patches import Circle, Wedge, Polygon
+from matplotlib.collections import PatchCollection
 import matplotlib.pyplot as plt
 
 # title
-plt.title('FIG. 3.')
+plt.title('FIG. 1.')
 
 # X
-plt.xlabel(r'$\mathcal{\omega (eV)} $', fontsize=24)
-plt.xticks([-.5, -.4, -.3, -.2, -.1, 0, .1, .2, .3, .4, .5])
+plt.xlabel('K<------r------>K', fontsize=24)
+plt.xticks([-2, 1.5, -1, -.5, 0, .5, 1, 1.5, 2])
 
 # Y
-plt.ylabel('DOS', fontsize=24)
-plt.yticks([0, .2, .4, .6])
+plt.ylabel('M<------r------>M', fontsize=24)
+plt.yticks([-2, -1.5, -1, -.5, 0, .5, 1, 1.5, 2])
 
 
 # axis
-plt.axis([-0.5, 0.5, 0, .7])
+plt.axis([-2, 2, -2, 2])
 
-x1 = [-.5, 0, .5]
-y1 = [.65, 0, .65]
+fig, ax = plt.subplots()
+N = 3
+x = np.random.rand(N)
+y = np.random.rand(N)
+radii = 0.1*np.random.rand(N)
+patches = []
+circle = Circle((x, y), radii)
 
-x2 = [-.5, -.4, -.3, -.2, -.1, 0, .1, .2, .3, .4, .5]
-y2 = [.3, .29, .27, .22, .13, 0, .13, .22, .27, .29, .3]
-
-x3 = [-.5, -.4, -.3, -.2, -.1, 0, .1, .2, .3, .4, .5]
-y3 = [.18, .2, .2, .2, .13, 0, .13, .2, .2, .2, .18]
-
-plt.plot(x1, y1, marker='x', linestyle='solid',
-         color='#000000', label=r'$\lambda=0$', markersize=4)
-
-plt.plot(x2, y2, marker='X', linestyle='-',
-         color='#ff0000', label=r'$\lambda=0.1$', markersize=5)
-
-plt.plot(x3, y3, marker='D', linestyle='dotted',
-         color='#0000ff', label=r'$\lambda=0.2$', markersize=6)
+colors = 100 * np.random.rand(len(patches))
+p = PatchCollection(patches, alpha=0.4)
+p.set_array(colors)
+ax.add_collection(p)
+fig.colorbar(p, ax=ax)
 
 # show
-plt.legend()
 plt.show()
