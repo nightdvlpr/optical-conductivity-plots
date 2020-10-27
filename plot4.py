@@ -33,5 +33,7 @@ p.set_array(colors)
 ax.add_collection(p)
 fig.colorbar(p, ax=ax)
 
+
+
 # show
 plt.show()
