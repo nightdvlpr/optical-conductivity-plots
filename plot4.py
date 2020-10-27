@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib
-from matplotlib.patches import Circle, Wedge, Polygon
-from matplotlib.collections import PatchCollection
 import matplotlib.pyplot as plt
 
 # title
@@ -17,23 +14,7 @@ plt.yticks([-2, -1.5, -1, -.5, 0, .5, 1, 1.5, 2])
 
 
 # axis
-plt.axis([-2, 2, -2, 2])
 
-fig, ax = plt.subplots()
-N = 3
-x = np.random.rand(N)
-y = np.random.rand(N)
-radii = 0.1*np.random.rand(N)
-patches = []
-circle = Circle((x, y), radii)
-
-colors = 100 * np.random.rand(len(patches))
-p = PatchCollection(patches, alpha=0.4)
-p.set_array(colors)
-ax.add_collection(p)
-fig.colorbar(p, ax=ax)
-
-
-
+#plt.plot(x1, y1, marker='x', linestyle='solid', color='#000000', label=r'$\lambda=0$', markersize=4)
 # show
 plt.show()
