@@ -6,7 +6,7 @@ plt.title('FIG. 2.')
 
 # X
 plt.xlabel(r'Ꞷ(eV)')
-plt.xticks([0, .1, .2, .3, .4, .5, .6, .7, .8, .9])
+plt.xticks([0, .01, .02, .03, .04, .05, .06, .07, .08, .09])
 
 # Y
 plt.ylabel(r'(Ꞷ)in unit of (2 e2/h)')
@@ -31,7 +31,6 @@ plt.plot(x1, y1, marker='', linestyle='-', color='#000', label='0eV')  # 0eV
 plt.plot(x2, y2, marker='', linestyle='--',color='#ff0000', label='1eV')  # 1ev
 plt.plot(x3, y3, marker='', linestyle='-.',color='#00ff00', label='2eV')  # 2ev
 plt.plot(x4, y4, marker='', linestyle='--',color='#0000ff', label='3eV')  # 3ev
-
 
 # show
 plt.legend()
