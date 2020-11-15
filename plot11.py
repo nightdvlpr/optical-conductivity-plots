@@ -33,8 +33,8 @@ y3 = np.array(
     [0, 0, 2.1, 2.1, 3.4, 3.8, 4, 4.2, 5, 15, 5, 3.5, 3, 2.7, 2.2, 1.8, 1.4, 0.4]
 )
 
-plt.plot(x3, y3, marker="", linestyle="--", color="#0000ff", label="", linewidth=2.1)
-plt.plot(x1, y1, marker="", linestyle="-", color="#000", label="", linewidth=1.5)
+plt.plot(x3, y3, marker="", linestyle="--", color="#0000ff", label="", linewidth=2.9)
+plt.plot(x1, y1, marker="", linestyle="-", color="#000", label="", linewidth=1.1)
 plt.plot(x2, y2, marker="", linestyle="dotted", color="#ff0000", label="", linewidth=3)
 
 # show
