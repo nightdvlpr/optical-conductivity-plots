@@ -5,11 +5,11 @@ import numpy as np
 plt.title("(c)")
 
 # X
-plt.xlabel(r"hw(me V)")
+plt.xlabel(r"$\hslash\omega(me V)$")
 plt.xticks([0, 20, 40, 50])
 
 # Y
-plt.ylabel(r"D(w)")
+plt.ylabel(r"$D(\omega)$")
 plt.yticks([0, 10, 20, 30, 40, 50])
 
 # axis

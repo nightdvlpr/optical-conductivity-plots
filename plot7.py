@@ -5,12 +5,12 @@ import numpy as np
 plt.title("(c)")
 
 # X
-plt.xlabel(r"hw(me V)")
+plt.xlabel(r"$\hslash\omega(me V)$")
 plt.xticks([0, 10, 20, 30, 40, 50])
 
 
 # Y
-plt.ylabel(r"")
+plt.ylabel(r"$\sigma xx (e^2/\hslash)$")
 plt.yticks([0, 0.1, 0.2, 0.3])
 
 # axis
